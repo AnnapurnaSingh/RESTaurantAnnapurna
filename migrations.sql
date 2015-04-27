@@ -1,0 +1,21 @@
+-- NEED TO EDIT: 
+
+-- -- Create a database
+-- CREATE DATABASE chirpr;
+-- \c chirpr
+--
+-- -- Create a users table with
+--   -- id
+--   -- username
+--   -- password_hash
+-- CREATE TABLE users (
+--   id SERIAL PRIMARY KEY,
+--   username VARCHAR(255),
+--   password_hash VARCHAR(255),
+-- );
+--
+-- -- Create a chirps table with
+--   -- id
+--   -- message
+--   -- user_id
+-- -- ** CODE NEEDED! **
