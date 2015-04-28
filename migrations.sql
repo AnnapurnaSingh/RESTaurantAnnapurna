@@ -1,21 +1,33 @@
--- NEED TO EDIT: 
+-- -- If running the tests...
+-- --   ... also perform migratins for the test database
+-- CREATE DATABASE restaurant_pos_test;
+-- \c restaurant_pos_test
 
--- -- Create a database
--- CREATE DATABASE chirpr;
--- \c chirpr
---
--- -- Create a users table with
---   -- id
---   -- username
---   -- password_hash
--- CREATE TABLE users (
---   id SERIAL PRIMARY KEY,
---   username VARCHAR(255),
---   password_hash VARCHAR(255),
--- );
---
--- -- Create a chirps table with
---   -- id
---   -- message
---   -- user_id
--- -- ** CODE NEEDED! **
+CREATE DATABASE restaurant_pos;
+\c restaurant_pos
+
+CREATE TABLE foods (
+  id SERIAL PRIMARY KEY,
+  name VARCHAR(255),
+  cents INTEGER,
+  cuisine VARCHAR(255),
+  -- allergens VARCHAR(255)
+);
+
+CREATE TABLE parties (
+  id SERIAL PRIMARY KEY,
+  table_number INTEGER,
+  is_paid BOOLEAN
+);
+
+CREATE TABLE orders (
+  id SERIAL PRIMARY KEY,
+  party_id INTEGER,
+  food_id INTEGER
+);
+
+CREATE TABLE users (
+  id SERIAL PRIMARY KEY,
+  username VARCHAR(255),
+  password_hash VARCHAR(255)
+);
