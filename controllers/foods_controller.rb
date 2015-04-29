@@ -27,11 +27,11 @@ class FoodsController < Sinatra::Base
     foods.to_json
   end
 
-  #how do I get all the parties that included this single food item, per instructions?
+  #how do I get all the parties that included this single food item, per instructions? below code?
   get '/:id' do
     food = Food.find(params[:id])
     content_type :json
-    food.to_json
+    food.to_json #(include :parties)??
   end
 
   post '/' do
