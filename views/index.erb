@@ -1,0 +1,42 @@
+<html>
+  <head>
+    <title>RESTaurant Annapurna</title>
+    <link rel="stylesheet" href="/stylesheets/styles.css">
+  </head>
+  <body>
+
+
+    <ul class='interface-list' id='menu-list'>
+    </ul>
+    <ul class='interface-list' id='party-list'>
+    </ul>
+
+
+    <button id='place-order'>
+      Order
+    </button>
+
+
+    <!-- ****** JS Libraries ****** -->
+    <script src='/javascripts/lib/jquery.js'></script>
+    <script src='/javascripts/lib/underscore.js'></script>
+    <script src='/javascripts/lib/backbone.js'></script>
+
+    <!-- ****** Backbone Models ****** -->
+    <script src='/javascripts/models/FoodModel.js'></script>
+    <script src='/javascripts/models/PartyModel.js'></script>
+
+    <!-- ****** Backbone Collection ****** -->
+    <script src='/javascripts/collections/FoodCollection.js'></script>
+    <script src='/javascripts/collections/PartyCollection.js'></script>
+
+    <!-- ****** Backbone Views ****** -->
+    <script src='/javascripts/views/FoodView.js'></script>
+    <script src='/javascripts/views/PartyView.js'></script>
+    <script src='/javascripts/views/GeneralListView.js'></script>
+
+    <!-- ****** JS Application ****** -->
+    <script src='/javascripts/app.js'></script>
+
+  </body>
+</html>

@@ -1,0 +1,16 @@
+body{
+  background-color: gray;
+}
+
+.food-selected{
+  background-color: lightblue;
+}
+
+.party-selected{
+  background-color: purple;
+}
+
+.interface-list{
+  display: inline-block;
+  border: 1px solid black;
+}
