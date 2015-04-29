@@ -1,16 +1,17 @@
 class WelcomeController < Sinatra::Base
-  enable :sessions
+  enable  :sessions
   helpers Sinatra::SessionHelper
 
   set :views, File.expand_path('../../views', __FILE__)
-  set :public_folder, File.expand_path('../..public', __FILE__)
+  set :public_folder, File.expand_path('../../public', __FILE__)
 
-  #*****Debugging******
+
+  # ***** Debugging *****
   get '/pry' do
     binding.pry
   end
 
-  #******Routes********
+  # ***** ROUTES *****
   get '/' do
     erb :index
   end

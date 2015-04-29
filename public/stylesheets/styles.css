@@ -1,13 +1,14 @@
 body{
-  background-color: gray;
-}
-
-.food-selected{
   background-color: lightblue;
 }
 
+
+
+.food-selected{
+  background-color: lightgreen;
+}
 .party-selected{
-  background-color: purple;
+  background-color: pink;
 }
 
 .interface-list{

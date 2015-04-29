@@ -1,15 +1,15 @@
 class SessionsController < Sinatra::Base
-  enable :sessions
+  enable  :sessions
   helpers Sinatra::SessionHelper
   use Rack::MethodOverride
 
-  #******Debugging*******
+  # ***** Debugging *****
   get '/pry' do
     binding.pry
   end
 
-  #******Routes: /sessions*******
 
+  # ***** Routes: /sessions *****
   post '/' do
     user = User.find_by(:username => params[:username])
     if user && user.password == params[:password]

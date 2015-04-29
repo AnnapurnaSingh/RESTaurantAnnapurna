@@ -3,7 +3,7 @@ var app = app || {};
 app.GeneralListView = Backbone.View.extend({
   initialize: function(options){
     this.modelView = options.modelView;
-    this.listenTo(this.collection, 'sync', this.render);
+    this.listenTo(this.collection,'sync', this.render);
   },
   render: function(){
     this.$el.empty();

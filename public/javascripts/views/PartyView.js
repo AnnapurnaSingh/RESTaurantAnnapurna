@@ -1,10 +1,24 @@
+// <li class='party'>
+//   <h3>
+//     3
+//   </h3>
+//   <button class="select-party">
+//     Select
+//   </button>
+//   <ul>
+//     <li>Cheese</li>
+//     <li>Salad</li>
+//   </ul>
+// </li>
+
+
 var app = app || {};
 
 app.PartyView = Backbone.View.extend({
 
   initialize: function(){
-    this.listenTo(this.model, 'change', this.render);
-    this.listenTo(this.model, 'delete', this.remove);
+    this.listenTo(this.model,'change', this.render);
+    this.listenTo(this.model,'delete', this.remove);
   },
   template: _.template('<h3><%= table_number %><button class="select-party">Select</button>'),
   tagName: 'li',
@@ -24,6 +38,7 @@ app.PartyView = Backbone.View.extend({
   },
   events:{
     'click .select-party': 'selectParty'
+    // 'event css-selector': 'functionToCall'
   },
   selectParty: function(){
     $('.party-selected').removeClass('party-selected');

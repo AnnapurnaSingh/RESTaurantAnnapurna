@@ -1,7 +1,7 @@
 class PartiesController < Sinatra::Base
-  enable :sessions
+  enable  :sessions
 
-  # ********* Helpers *********
+  # ***** Helpers *****
   def party_params
     return params[:party] if params[:party]
     body_data = {}
@@ -10,48 +10,50 @@ class PartiesController < Sinatra::Base
     body_data = body_data['party'] || body_data
   end
 
-  #******Debuggging*****
+  # ***** Debugging *****
   get '/pry' do
     binding.pry
   end
 
-  #********Routes: /api/parties*******
+
+  # ***** Routes: /api/parties *****
   get '/' do
     parties = Party.all
     content_type :json
-    parties.to_json(include :foods)
+    parties.to_json(include: :foods)
   end
 
   get '/:id' do
     party = Party.find(params[:id])
     content_type :json
-    party.to_json(include :foods)
+    party.to_json(include: :foods)
   end
 
   post '/' do
     party = Party.create(party_params)
     content_type :json
-    party.to_json(include :foods)
+    party.to_json(include: :foods)
   end
 
   patch '/:id' do
     party = Party.find(params[:id])
     party.update(party_params)
     content_type :json
-    party.to_json(include :foods)
+    party.to_json(include: :foods)
   end
 
   put '/:id' do
     party = Party.find(params[:id])
     party.update(party_params)
     content_type :json
-    party.to_json(include :foods)
+    party.to_json(include: :foods)
   end
 
   delete '/:id' do
-    Party.destroy(params[:id])
-    content_type :json
-    {success: "ok"}.to_json
+     Party.destroy(params[:id])
+     content_type :json
+     {success: "ok"}.to_json
   end
+
 
 end

@@ -1,37 +1,33 @@
 class FoodsController < Sinatra::Base
-  enable :sessions
+  enable  :sessions
   helpers Sinatra::SessionHelper
 
-  # ********* Helpers ******
+  # ***** Helpers *****
   def food_params
-    return params[:food] if
-    params[:food]
+    return params[:food] if params[:food]
     body_data = {}
-    @request_body ||=
-    request.body.read.to_s
-    body_data = (JSON(@request_body))
-    unless @request_body.empty?
-    body_data = body_data['food'] ||
-    body_data
+    @request_body ||= request.body.read.to_s
+    body_data = (JSON(@request_body)) unless @request_body.empty?
+    body_data = body_data['food'] || body_data
   end
 
-  #******* Debugging ******
+  # ***** Debugging *****
   get '/pry' do
     binding.pry
   end
 
-  #****** Routes: /api/foods *******
+
+  # ***** Routes: /api/foods *****
   get '/' do
     foods = Food.all
     content_type :json
     foods.to_json
   end
 
-  #how do I get all the parties that included this single food item, per instructions? below code?
   get '/:id' do
     food = Food.find(params[:id])
     content_type :json
-    food.to_json #(include :parties)??
+    food.to_json
   end
 
   post '/' do
@@ -59,8 +55,9 @@ class FoodsController < Sinatra::Base
 
   delete '/:id' do
     authenticate_api!
-      Food.destroy(params[:id])
-      content_type :json
-      {success: "ok"}.to_json
+     Food.destroy(params[:id])
+     content_type :json
+     {success: "ok"}.to_json
   end
+
 end

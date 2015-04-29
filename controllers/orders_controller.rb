@@ -1,7 +1,7 @@
-class OrdersController <Sinatra::Base
-  enable :sessions
+class OrdersController < Sinatra::Base
+  enable  :sessions
 
-  #*******Helpers*********
+  # ***** Helpers *****
   def order_params
     return params[:order] if params[:order]
     body_data = {}
@@ -10,12 +10,13 @@ class OrdersController <Sinatra::Base
     body_data = body_data['order'] || body_data
   end
 
-  #*****Debugging*******
+  # ***** Debugging *****
   get '/pry' do
     binding.pry
   end
 
-  #******Routes: /api/orders ******
+
+  # ***** Routes: /api/orders *****
   get '/' do
     orders = Order.all
     content_type :json
@@ -49,9 +50,9 @@ class OrdersController <Sinatra::Base
   end
 
   delete '/:id' do
-    Order.destroy(params[:id])
-    content_type :json
-    {success: "ok"}.to_json
+     Order.destroy(params[:id])
+     content_type :json
+     {success: "ok"}.to_json
   end
 
 end
