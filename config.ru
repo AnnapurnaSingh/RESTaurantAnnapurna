@@ -29,5 +29,4 @@ map('/api/foods') { run FoodsController.new() }
 map('/api/parties') { run PartiesController.new() }
 map('/api/orders') { run OrdersController.new() }
 map('/sessions') { run SessionsController.new() }
-
 map('/') { run WelcomeController.new() }

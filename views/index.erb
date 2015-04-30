@@ -1,20 +1,55 @@
 <html>
   <head>
-    <title>RESTaurant</title>
+    <title>RESTaurant Schmancy</title>
     <link rel="stylesheet" href="/stylesheets/styles.css">
   </head>
   <body>
+    <header>
+	      <h1>Le Restaurant Schmancy</h1>
+    </header>
 
-
+    <form action="/sessions" method="post">
+      <input type="text" name="username" placeholder='...username'>
+      <input type="text" name="password" placeholder='...password'>
+      <input type="submit" value="Log-In">
+    </form>
+    
     <ul class='interface-list' id='menu-list'>
-    </ul>
-    <ul class='interface-list' id='party-list'>
+      <h2>Menu</h2>
+        <a href="/">Click to Order!</a>
+
+        <form action="/foods" method="post">
+          <input type="text" name="food" placeholder='...create Food'>
+          <input type="submit" value="Submit New Food">
+        </form>
+
+        <button id='place-food'>
+          Submit New Food
+        </button>
+
     </ul>
 
+    <ul class='interface-list' id='party-list'>
+      <h3>Parties</h3>
+        <a href="/">Click on a Party!</a>
+
+        <form action="/parties" method="post">
+          <input type="text" name="party" placeholder='...create Party'>
+          <input type="submit" value="Submit New Party">
+
+          <button id='place-party'>
+            Submit New Party!
+          </button>
+
+        </form>
+    </ul>
 
     <button id='place-order'>
-      Order
+      Place Order!
+      <!-- how to display running tally of orders when clicked? -->
     </button>
+
+
 
 
     <!-- ****** JS Libraries ****** -->
